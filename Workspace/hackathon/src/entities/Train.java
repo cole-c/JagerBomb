@@ -1,8 +1,6 @@
-package hackathon;
+package entities;
 
-public class Train {
-	public Integer id;
-	public Integer version;
+public class Train extends OutputData{
 	public Bill bill;
 	public Integer step;
 	public boolean active;
@@ -10,27 +8,11 @@ public class Train {
 	
 	public Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current){
 		this.id = id;
-		this.version = verson;
+		this.version = version;
 		this.bill = bill;
 		this.step = step;
 		this.active = active;
 		this.current = current;	
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getVersion() {
-		return version;
-	}
-
-	public void setVersion(Integer version) {
-		this.version = version;
 	}
 
 	public Bill getBill() {

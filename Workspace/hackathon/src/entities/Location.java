@@ -1,26 +1,14 @@
-package hackathon;
+package entities;
 
-public class Location {
-	
-	int id;
-	int version;
+public class Location extends OutputData{
 	String city;
 	String state;
 	
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
+	public Location(Integer id, Integer version, String city, String state){
 		this.id = id;
-	}
-	
-	public int getVersion() {
-		return version;
-	}
-	
-	public void setVersion(int version) {
 		this.version = version;
+		this.city = city;
+		this.state = state;
 	}
 	
 	public String getCity() {
