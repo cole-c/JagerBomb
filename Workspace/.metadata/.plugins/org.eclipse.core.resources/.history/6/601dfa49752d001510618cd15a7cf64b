@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class DataReader {
 
-	static Integer count = 0;
 	static HashMap<Integer, Event> eventHash = new HashMap<Integer, Event>();
 	
 	public static HashMap<Integer, Event> readEvents(){
@@ -22,7 +21,6 @@ public class DataReader {
 		String[] tokensEvents;
 		s.nextLine();
 		while(s.hasNextLine()){
-			count++;
 			events = s.nextLine();
 			tokensEvents = events.split(",");
 			Integer eventId = Integer.parseInt(tokensEvents[0]);
@@ -37,7 +35,6 @@ public class DataReader {
 			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
 			eventHash.put(eventId, event);
 		}
-		count = count - 1;
 	
 		s.close();
 		return eventHash;
