@@ -23,18 +23,28 @@ public class DataReader {
 			count++;
 			s.useDelimiter(",");
 			Integer eventId = s.nextInt();
+			System.out.printf("eventId: %d\n", eventId);
 			Integer eventTime = s.nextInt();
+			System.out.printf("eventTime: %d\n", eventTime);
 			String producerType = s.next();
+			System.out.printf("producerType: %s\n", producerType);
 			Integer producerId = s.nextInt();
+			System.out.printf("producerId: %d\n", producerId);
 			Integer producerVersion = s.nextInt();
+			System.out.printf("producerVersion: %d\n", producerVersion);
 			String outputType = s.next();
+			System.out.printf("outputType: %s\n", outputType);
 			Integer outputId = s.nextInt();
+			System.out.printf("outputId: %d\n", outputId);
 			Integer outputVersion = s.nextInt();
+			System.out.printf("outputVersion: %d\n", outputVersion);
 			s.useDelimiter("\n");
 			String outputData = s.next();
-			processJSON(outputData); //temporarily void until outputData is defined
-			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
-			eventHash.put(eventId, event);
+			outputData.replaceAll(",", "");
+			System.out.printf("outputData: %s\n", outputData);
+			//processJSON(outputData); //temporarily void until outputData is defined
+			//Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
+			//eventHash.put(eventId, event);
 		}
 		count = count - 1;
 	
@@ -42,7 +52,7 @@ public class DataReader {
 		return eventHash;
 	}
 
-
+	/*
 	private static void processJSON(String outputData) {
 		String[] tokensJSON;
 		
@@ -55,5 +65,5 @@ public class DataReader {
 		 * Train train = Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current)
 		 */
 		
-	}
+	//}
 }

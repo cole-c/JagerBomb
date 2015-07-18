@@ -18,8 +18,8 @@ public class DataReader {
 			e.printStackTrace();
 		}
 		
+		s.nextLine();
 		while(s.hasNextLine()){
-			s.nextLine();
 			count++;
 			s.useDelimiter(",");
 			Integer eventId = s.nextInt();
@@ -32,7 +32,7 @@ public class DataReader {
 			Integer outputVersion = s.nextInt();
 			s.useDelimiter("\n");
 			String outputData = s.next();
-			processJSON(outputData); //temporarily void until outputData is defined
+			//processJSON(outputData); //temporarily void until outputData is defined
 			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
 			eventHash.put(eventId, event);
 		}
@@ -42,7 +42,7 @@ public class DataReader {
 		return eventHash;
 	}
 
-
+	/*
 	private static void processJSON(String outputData) {
 		String[] tokensJSON;
 		
@@ -55,5 +55,5 @@ public class DataReader {
 		 * Train train = Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current)
 		 */
 		
-	}
+	//}
 }
