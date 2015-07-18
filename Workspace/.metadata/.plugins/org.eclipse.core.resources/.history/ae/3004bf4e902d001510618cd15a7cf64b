@@ -33,7 +33,6 @@ public class DataReader {
 			s.useDelimiter("\n");
 			String outputData = s.next();
 			outputData = outputData.substring(1, outputData.lastIndexOf("}"));
-			System.out.println(outputData);
 			processJSON(outputData); //temporarily void until outputData is defined
 			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
 			eventHash.put(eventId, event);
