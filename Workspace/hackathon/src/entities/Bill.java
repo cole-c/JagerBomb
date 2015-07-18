@@ -1,8 +1,6 @@
-package hackathon;
+package entities;
 
-public class Bill {
-	public Integer id;
-	public Integer version;
+public class Bill extends OutputData{
 	public Customer customer;
 	public Route route;
 	public Integer charge;
@@ -13,18 +11,6 @@ public class Bill {
 		this.customer = customer;
 		this.route = route;
 		this.charge = charge;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public Integer getVersion() {
-		return version;
 	}
 
 	public void setVersion(Integer version) {
