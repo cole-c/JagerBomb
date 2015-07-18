@@ -1,0 +1,15 @@
+package hackathon;
+
+public class Event {
+	public Integer eventId;
+	public Integer eventTime;
+	public String producerType;
+	public Integer producerId;
+	public Integer producerVersion;
+	public String outputType;
+	public Integer outputId;
+	public Integer outputVersion;
+	public String outputData;
+	
+	public Event
+}
