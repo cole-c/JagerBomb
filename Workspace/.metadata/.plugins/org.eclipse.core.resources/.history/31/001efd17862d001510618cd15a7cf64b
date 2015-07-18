@@ -62,6 +62,32 @@ public class DataReader {
 		 * Bill bill = Bill(Integer id, Integer version, Customer customer, Route route, Integer charge)
 		 * Train train = Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current)
 		 */
-		
+		tokensJSON = outputData.split(",");
+		if(tokensJSON[0].contains("TRAIN")){
+			tokensJSON[1].replace("id:", "");
+			tokensJSON[2].replace("version:", "");
+			tokensJSON[4].replace("id:", "");
+			tokensJSON[5].replace("version:", "");
+			tokensJSON[7].replace("id:", "");
+			tokensJSON[8].replace("version:", "");
+			tokensJSON[9].replace("name:", "");
+			tokensJSON[9].replaceAll("\"", "");
+			tokensJSON[10].replace("charges:", "");
+			tokensJSON[10].replace("}", "");
+			tokensJSON[12].replace("id:", "");
+			tokensJSON[13].replace("version:", "");
+			tokensJSON[15].replace("id:", "");
+			tokensJSON[16].replace("version:", "");
+			tokensJSON[17].replace("city:", "");
+			tokensJSON[17].replaceAll("\"", "");
+			tokensJSON[18].replace("state:", "");
+			tokensJSON[18].replace("}", "");
+			tokensJSON[18].replaceAll("\"", "");
+			Customer customer = Customer(Integer.parseInt(tokensJSON[7]), Integer.parseInt(tokensJSON[8]), tokensJSON[9], Integer.parseInt(tokensJSON[10]));
+			Location origin = Location(Integer.parseInt(tokensJSON[15]), Integer.parseInt(tokensJSON[16]), tokensJSON[17], tokensJSON[18]);
+			Route route = Route(Integer.parseInt(tokensJSON[12]), Integer.parseInt(tokensJSON[13]), origin, destination, locations);
+			Bill bill = Bill(Integer.parseInt(tokensJSON[4]), Integer.parseInt(tokensJSON[5]), customer, route, Integer.parseInt(tokensJSON[10]));
+			Train train = Train(Integer.parseInt(tokensJSON[1]), Integer.parseInt(tokensJSON[2]), bill, Integer.parseInt(tokensJSON[]), tokensJSON[], currentLoc);
+		}
 	}
 }
