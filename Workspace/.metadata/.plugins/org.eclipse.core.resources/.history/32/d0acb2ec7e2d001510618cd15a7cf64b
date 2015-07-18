@@ -34,7 +34,6 @@ public class DataReader {
 			Integer outputId = Integer.parseInt(tokensEvents[6]);
 			Integer outputVersion = Integer.parseInt(tokensEvents[7]);
 			String outputData = tokensEvents[8];
-			processJSON(outputData); //temporarily void until outputData is defined
 			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
 			eventHash.put(eventId, event);
 		}
@@ -42,15 +41,5 @@ public class DataReader {
 	
 		s.close();
 		return eventHash;
-	}
-
-	private static void processJSON(String outputData) {
-		String[] tokensJSON;
-		tokensJSON = outputData.split(",");
-		if(tokensJSON[0].contains("TRAIN")){
-			tokensJSON[1].replace("id:", "");
-			tokensJSON[2].replace("version:", "");
-			Train train = Train(Integer.parseInt(tokensJSON[1]), Integer.parseInt(tokensJSON[2]), Bill bill, Integer.parseInt(tokensJSON[]), tokensJSON[], Location current);
-		}
 	}
 }
