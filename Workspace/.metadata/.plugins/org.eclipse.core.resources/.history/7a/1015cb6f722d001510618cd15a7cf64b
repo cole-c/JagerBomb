@@ -19,7 +19,6 @@ public class DataReader {
 		String events = "";
 	
 		String[] tokensEvents;
-		s.nextLine();
 		while(s.hasNextLine()){
 			events = s.nextLine();
 			tokensEvents = events.split(",");
