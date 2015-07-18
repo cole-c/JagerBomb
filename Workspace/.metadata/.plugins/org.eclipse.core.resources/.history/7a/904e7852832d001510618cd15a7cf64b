@@ -2,7 +2,7 @@ package entities;
 
 public class Customer extends OutputData{
 	String name;
-	Integer payments;
+	int payments;
 	
 	public Customer(Integer id, Integer version, String name, Integer payments) {
 		this.id = id;
