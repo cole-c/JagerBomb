@@ -12,13 +12,6 @@ import entities.Train;
 public class Main {
 	public static void main(String[] args){
 		HashMap<Integer, Event> events = DataReader.readEvents();
-		/*
-		HashMap<Integer, Entity> entities;
-		HashMap<Integer, Bill> bills;
-		HashMap<Integer, Customer> customers;
-		HashMap<Integer, Location> locations;
-		HashMap<Integer, Route> routes;
-		HashMap<Integer, Train> trains;
-		*/
+		
 	}
 }
