@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hidden Graphs</title>
+	<link rel="stylesheet" href="index.css">
+
+
+    <style type="text/css">
+        #mynetwork {
+            width: 1500px;
+            height: 1500px;
+            border: 1px solid white;
+        }
+    </style>
+
+  <script type="text/javascript" src="C:/Users/Cole/Desktop/JagerBomb/Workspace/hackathon/javascript/vis.js"></script>
+  <link href="C:/Users/Cole/Desktop/JagerBomb/Workspace/hackathon/javascript/vis.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+    var network = null;
+    var layoutMethod = "hubsize";
+
+    function destroy() {
+      if (network !== null) {
+        network.destroy();
+        network = null;
+      }
+    }
+
+    function draw() {
+      destroy();
+
+      var nodes = [];
+      var edges = [];
+      // randomly create some nodes and edges
+      for (var i = 0; i < 19; i++) {
+        nodes.push({id: i, label: String(i)});
+      }
+      edges.push({from: 0, to: 1});
+      edges.push({from: 0, to: 6});
+      edges.push({from: 0, to: 13});
+      edges.push({from: 0, to: 11});
+      edges.push({from: 1, to: 2});
+      edges.push({from: 2, to: 3});
+      edges.push({from: 2, to: 4});
+      edges.push({from: 3, to: 5});
+      edges.push({from: 1, to: 10});
+      edges.push({from: 1, to: 7});
+      edges.push({from: 2, to: 8});
+      edges.push({from: 2, to: 9});
+      edges.push({from: 3, to: 14});
+      edges.push({from: 1, to: 12});
+      edges.push({from: 16, to: 15});
+      edges.push({from: 15, to: 17});
+      edges.push({from: 18, to: 17});
+
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+        layout: {
+          hierarchical: {
+            sortMethod: layoutMethod
+          }
+        },
+        edges: {
+          smooth: true,
+          arrows: {to : true }
+        }
+      };
+      network = new vis.Network(container, data, options);
+    }
+
+  </script>
+  <script src="C:/Users/Cole/Desktop/JagerBomb/Workspace/hackathon/javascript/googleAnalytics.js"></script>
+
+</head>
+
+<body onload="draw();">
+<h1>
+	<img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Union_Pacific_Logo.svg/889px-Union_Pacific_Logo.svg.png" alt="upload.wikimedia.org" height="200" width="200">
+<br/>
+    Hidden Graphs Algorithms
+</h1>
+
+<form action="problem_checkbox">
+  <form action="">
+	1<input type="radio" name="problem" value="1" onclick="this.form.submit();">
+	2<input type="radio" name="problem" value="2" onclick="this.form.submit();">
+	3<input type="radio" name="problem" value="3" onclick="this.form.submit();">
+	4<input type="radio" name="problem" value="4" onclick="this.form.submit();">
+</form>
+</form>
+
+<div style="text-align: center;">
+	<div style="display: inline-block; margin:5px;">
+	  <label for="type">Type</label>
+	  <input id="type" name="type" size="10" type="text" />
+	</div>
+	
+	<div style="display: inline-block; margin:5px;">
+	  <label for="id">Id</label>
+	  <input id="id" name="id" size="10" type="text" />
+	</div>
+	
+	<div style="display: inline-block; margin:5px;">
+	  <label for="version">Version</label>
+	  <input id="version" name="version" size="10" type="text" />
+	</div>
+</div>
+
+<div class="wrapper" style="text-align:center">
+	<button type="button">GO!</button>
+</div>
+
+<div id="mynetwork"></div>
+</body>
+</html>
