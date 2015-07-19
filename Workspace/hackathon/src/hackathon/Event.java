@@ -5,8 +5,19 @@ import entities.Entity;
 public class Event {
 	public Integer eventId;
 	public Integer eventTime;
+<<<<<<< HEAD
 	public Entity producer;
 	public Entity creation;
+=======
+	public String producerType;
+	public Integer producerId;
+	public Integer producerVersion;
+	
+	public String outputType;
+	public Integer outputId;
+	public Integer outputVersion;
+	public String outputData;
+>>>>>>> branch 'DataReaderJSON' of https://github.com/cole-c/JagerBomb.git
 	
 	public Event(Integer eventId, Integer eventTime, Entity producer, Entity creation){
 		this.eventId = eventId;
