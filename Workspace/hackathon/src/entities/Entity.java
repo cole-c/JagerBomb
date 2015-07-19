@@ -4,6 +4,7 @@ public class Entity {
 	
 	Integer id;
 	Integer version;
+	//Entity producer;
 	
 	public int getId() {
 		return id;
