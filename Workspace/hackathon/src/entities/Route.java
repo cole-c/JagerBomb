@@ -2,7 +2,7 @@ package entities;
 
 import java.util.ArrayList;
 
-public class Route extends OutputData{
+public class Route extends Entity{
 	public Location origin;
 	public Location destination;
 	public ArrayList<Location> locations;
