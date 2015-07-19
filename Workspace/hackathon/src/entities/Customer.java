@@ -1,6 +1,6 @@
 package entities;
 
-public class Customer extends OutputData{
+public class Customer extends Entity{
 	String name;
 	Integer payments;
 	

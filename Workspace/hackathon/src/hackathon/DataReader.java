@@ -8,6 +8,10 @@ import java.util.Scanner;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import entities.Bill;
+import entities.Location;
+import entities.Train;
+
 public class DataReader {
 
 	static Integer count = 0;
@@ -54,7 +58,7 @@ public class DataReader {
 			outputData = outputData.replace("}\"", "}");
 			outputData = outputData.replace(",\"", ",");
 			outputData = outputData + "}";
-			//System.out.println(outputData);
+			System.out.println(outputData);
 			
 			try {
 				JSONObject json = new JSONObject(outputData);
@@ -62,6 +66,29 @@ public class DataReader {
 				//System.out.print(json.getInt("id")+" ");
 				//System.out.println(json.getInt("version")+" ");
 				String type = json.getString("type");
+				Integer id = json.getInt("id");
+				Integer version = json.getInt("version");
+				String bill = json.getString("bill");
+				String customer = json.getString("customer");
+				String route = json.getString("route");
+				String name = json.getString("name");
+				String city = json.getString("city");
+				String origin = json.getString("origin");
+				String state = json.getString("state");
+				String destination = json.getString("destination");
+				String location = json.getString("location");
+				String step = json.getString("step");
+				String active = json.getString("active");
+				String current = json.getString("current");
+				
+				//bills
+				
+				//Integer id, Integer version, Bill bill, Integer step, boolean active, Location current
+				if(type == "TRAIN"){
+					//Train newTrain = new Train(id, version, bill, step, active, current);
+				}
+				
+				
 			} catch (JSONException e) {
 				//shouldn't ever happen with properly formatted data
 				e.printStackTrace();
