@@ -1,6 +1,6 @@
 package entities;
 
-public class Bill extends OutputData{
+public class Bill extends Entity{
 	public Customer customer;
 	public Route route;
 	public Integer charge;

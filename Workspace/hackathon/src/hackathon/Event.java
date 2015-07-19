@@ -6,6 +6,7 @@ public class Event {
 	public String producerType;
 	public Integer producerId;
 	public Integer producerVersion;
+	
 	public String outputType;
 	public Integer outputId;
 	public Integer outputVersion;

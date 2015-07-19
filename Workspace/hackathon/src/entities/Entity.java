@@ -1,6 +1,6 @@
 package entities;
 
-public class OutputData {
+public class Entity {
 	
 	Integer id;
 	Integer version;

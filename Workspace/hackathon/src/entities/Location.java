@@ -1,6 +1,6 @@
 package entities;
 
-public class Location extends OutputData{
+public class Location extends Entity{
 	String city;
 	String state;
 	

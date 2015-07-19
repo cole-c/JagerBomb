@@ -1,6 +1,6 @@
 package entities;
 
-public class Train extends OutputData{
+public class Train extends Entity{
 	public Bill bill;
 	public Integer step;
 	public boolean active;
