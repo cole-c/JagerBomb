@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="entities.Bill"/>
+<fullyQualifiedTypeName name="entities.Customer"/>
+<fullyQualifiedTypeName name="entities.Train"/>
+<fullyQualifiedTypeName name="entities.Route"/>
+<fullyQualifiedTypeName name="entities.Location"/>
+</qualifiedTypeNameHistroy>

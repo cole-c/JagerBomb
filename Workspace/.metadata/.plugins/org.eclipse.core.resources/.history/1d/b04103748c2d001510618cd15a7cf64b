@@ -1,0 +1,68 @@
+package hackathon;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+import entities.Bill;
+import entities.Customer;
+import entities.Location;
+import entities.Route;
+import entities.Train;
+
+public class DataReader {
+
+	static Integer count = 0;
+	static HashMap<Integer, Event> eventHash = new HashMap<Integer, Event>();
+	
+	public static HashMap<Integer, Event> readEvents(){
+		Scanner s = null;
+		try{
+			s = new Scanner(new File("data/smallData.csv"));
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		String events = "";
+	
+		String[] tokensEvents;
+		s.nextLine();
+		while(s.hasNextLine()){
+			count++;
+			s.useDelimiter(",");
+			Integer eventId = s.nextInt();
+			Integer eventTime = s.nextInt();
+			String producerType = s.next();
+			Integer producerId = s.nextInt();
+			Integer producerVersion = s.nextInt();
+			String outputType = s.next();
+			Integer outputId = s.nextInt();
+			Integer outputVersion = s.nextInt();
+			s.useDelimiter("\n");
+			String outputData = s.next();
+			//processJSON(outputData); //temporarily void until outputData is defined
+			Event event = new Event(eventId, eventTime, producerType, producerId, producerVersion, outputType, outputId, outputVersion, outputData);
+			eventHash.put(eventId, event);
+		}
+		count = count - 1;
+	
+		s.close();
+		return eventHash;
+	}
+
+	/*
+	private static void processJSON(String outputData) {
+		String[] tokensJSON;
+		
+		/*
+		 * Customer customer = Customer(Integer id, Integer version, String name, Integer payments)
+		 * Location origin = Location(Integer id, Integer version, String city, String state)
+		 * Location destination = Location(Integer id, Integer version, String city, String state)
+		 * Route route = Route(Integer id, Integer version, Location origin, Location destination, ArrayList<Location> locations)
+		 * Bill bill = Bill(Integer id, Integer version, Customer customer, Route route, Integer charge)
+		 * Train train = Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current)
+		 */
+		
+	//}
+}
