@@ -76,6 +76,7 @@ public class DataReader {
 				String type = json.getString("type");
 				Integer id = json.getInt("id");
 				Integer version = json.getInt("version");
+
 				if(type.equals("TRAIN")) {
 					//make a metric fuckton of JSON objects
 					JSONObject billSON = json.getJSONObject("bill");
