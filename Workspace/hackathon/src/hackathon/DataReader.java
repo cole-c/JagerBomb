@@ -68,6 +68,7 @@ public class DataReader {
 				String type = json.getString("type");
 				Integer id = json.getInt("id");
 				Integer version = json.getInt("version");
+				/*
 				String bill = json.getString("bill");
 				String customer = json.getString("customer");
 				String route = json.getString("route");
@@ -80,7 +81,7 @@ public class DataReader {
 				String step = json.getString("step");
 				String active = json.getString("active");
 				String current = json.getString("current");
-				
+				*/
 				//bills
 				
 				//Integer id, Integer version, Bill bill, Integer step, boolean active, Location current
