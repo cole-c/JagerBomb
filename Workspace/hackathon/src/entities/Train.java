@@ -3,10 +3,10 @@ package entities;
 public class Train extends Entity{
 	public Bill bill;
 	public Integer step;
-	public String active;
+	public boolean active;
 	public Location current;
 	
-	public Train(Integer id, Integer version, Bill bill, Integer step, String active, Location current){
+	public Train(Integer id, Integer version, Bill bill, Integer step, boolean active, Location current){
 		this.id = id;
 		this.version = version;
 		this.bill = bill;
@@ -31,11 +31,11 @@ public class Train extends Entity{
 		this.step = step;
 	}
 
-	public String getActive() {
+	public boolean getActive() {
 		return active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(boolean active) {
 		this.active = active;
 	}
 
